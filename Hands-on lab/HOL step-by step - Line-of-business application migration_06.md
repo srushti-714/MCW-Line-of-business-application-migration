@@ -92,7 +92,7 @@ You will now deploy the Azure Migrate appliance virtual machine.  Normally, you 
 
 15. In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Start** on the left.
 
-   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/Ex1t2s15.png "Start AzureMigrateAppliance")
+   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/Ex1task2s15.png "Start AzureMigrateAppliance")
 
 #### Task summary 
 
@@ -285,7 +285,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 6. From **Hyper-V Manager** console, select **smarthotelweb1** and select **Connect**.
 
-    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](images/Exercise1/Ex1t5s6.png "Connect to smarthotelweb1")
+    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](images/Exercise1/Ex1task5s6.png "Connect to smarthotelweb1")
 
 7. Select **Connect** again when prompted and log in to the **Administrator** account using the password **demo!pass123**.
 
