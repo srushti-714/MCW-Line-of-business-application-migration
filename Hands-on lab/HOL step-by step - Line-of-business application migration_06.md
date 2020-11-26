@@ -17,9 +17,11 @@ In this task, you will create the Azure Migrate project and select the assessmen
     
 1. Select **All services** in the portal's left navigation, then search for and select **Azure Migrate** to open the Azure Migrate Overview blade, shown below.
 
-    ![Screenshot of the Azure Migrate overview blade.](images/Exercise1/azure-migrate-overview.png "Azure Migrate Overview blade")
+    ![Screenshot of the Azure Migrate overview blade.](images/Exercise1/Ex1t1s3.png "Azure Migrate Overview blade")
 
 1. On the overview blade of Azure Migrate, select **Assess and migrate servers**, then **Create project**.
+
+![Screenshot of creating project.](images/Exercise1/azure-migrate-overview.png "Azure Migrate Overview blade")
 
 1. Select your subscription and create a new resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a geography close to you to store the migration assessment data. Then select **Create**.
 
@@ -58,13 +60,13 @@ In this task, you will deploy and configure the Azure Migrate appliance in the o
 
 7. In Server Manager, select **Tools**, then **Hyper-V Manager** (if Server Manager does not open automatically, open it by selecting **Start**, then **Server Manager**). In Hyper-V Manager, select **SMARTHOSTSUFFIX**. You should now see a list of the four VMs that comprise the on-premises SmartHotel application.
 
-    ![Screenshot of Hyper-V Manager on the SmartHotelHost, showing 4 VMs: smarthotelSQL1, smarthotelweb1, smarthotelweb2 and UbuntuWAF.](images/Exercise1/hyperv-vm-list.png "Hyper-V Manager")
+    ![Screenshot of Hyper-V Manager on the SmartHotelHost, showing 4 VMs: smarthotelSQL1, smarthotelweb1, smarthotelweb2 and UbuntuWAF.](images/Exercise1/Ex1t2s5.png "Hyper-V Manager")
 
 You will now deploy the Azure Migrate appliance virtual machine.  Normally, you would first need to download the .ZIP file containing the appliance to your Hyper-V host, and unzip it. To save time, these steps have been completed for you.
 
 8. In Hyper-V Manager, under **Actions**, select **Import Virtual Machine...** to open the **Import Virtual Machine** wizard.
 
-    ![Screenshot of Hyper-V Manager, with the 'Import Virtual Machine' action highlighted.](images/Exercise1/import-vm-1.png "Import Virtual Machine")
+    ![Screenshot of Hyper-V Manager, with the 'Import Virtual Machine' action highlighted.](images/Exercise1/Ex2t2s3.png "Import Virtual Machine")
 
 9. At the first step, **Before You Begin**, select **Next**.
 
@@ -90,7 +92,7 @@ You will now deploy the Azure Migrate appliance virtual machine.  Normally, you 
 
 15. In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Start** on the left.
 
-   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/start-migrate-appliance.png "Start AzureMigrateAppliance")
+   ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/Ex1t2s15.png "Start AzureMigrateAppliance")
 
 #### Task summary 
 
@@ -102,7 +104,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 1.  In Hyper-V Manager, select the **AzureMigrateAppliance** VM, then select **Connect** on the left.
 
-    ![Screenshot of Hyper-V Manager showing the connect button for the Azure Migrate appliance.](images/Exercise1/connect-appliance.png "Connect to AzureMigrateAppliance")
+    ![Screenshot of Hyper-V Manager showing the connect button for the Azure Migrate appliance.](images/Exercise1/Ex1t3s1.png "Connect to AzureMigrateAppliance")
 
 2.  A new window will open showing the Azure Migrate appliance. Wait for the License terms screen to show, then select **Accept**.
 
@@ -140,6 +142,8 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 10. Select **Login**. This will open an Azure login prompt in a new browser tab which will ask you to enter code. you have to go to previous page and you will be able to find a generated code. Enter this code and click on Next button. (if it doesn't appear, make sure the pop-up blocker in the browser is disabled).
 
+    ![Screenshot of vuewing the code.](images/Exercise1/Ex1t3s10.png "Register with Azure Migrate")
+
 11.Log in using your Azure credentials. Once you have logged in, return to the Azure Migrate Appliance tab and the appliance registration will start automatically.
 
    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
@@ -150,9 +154,9 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     ![Screenshot of the Azure Migreate appliance configuration wizard, showing the 'Add credentials' button.](images/Exercise1/add-cred1.png "Add credentials")
 
-13. Specify **hostlogin** as the friendly name for credentials, username **demouser**, and password **demo!pass123** for the Hyper-V host/cluster that the appliance will use to discover VMs. Select **Save**.
+13. Specify **Smarthotel** as the friendly name for credentials, username **demouser**, and password **demo!pass123** for the Hyper-V host/cluster that the appliance will use to discover VMs. Select **Save**.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add credentials' panel.](images/Exercise1/add-cred2.png "Credentials")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add credentials' panel.](images/Exercise1/Ex1t3s13.png "Credentials")
 
      > **Note**: The Azure Migrate appliance may not have picked up your local keyboard mapping. Select the 'eyeball' in the password box to check the password was entered correctly.
 
@@ -162,15 +166,15 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' button.](images/Exercise1/add-disc1.png "Add discovery source")
 
-15. Select **Add single item**, select **hostlogin** as the friendly name, and enter **SmartHostSUFFIX** under 'IP Address / FQDN'.
+15. Select **Add single item**, select **Smarthotel** as the friendly name, and enter **SmartHostSUFFIX** under 'IP Address / FQDN'.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](images/Exercise1/add-disc2.png "Discovery source - SmartHotelHost")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](images/Exercise1/Ex1t3s15.png "Discovery source - SmartHotelHost")
 
     > **Note:** You can either **Add single item** at a time or **Add multiple items** in one go. There is also an option to provide Hyper-V host/cluster details through **Import CSV**.
 
 16. Select **Save**. The appliance will validate the connection to the Hyper-V hosts/clusters added and show the **Validation status** in the table against each host/cluster.
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](images/Exercise1/add-disc3.png "Discovery source - validation successful")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](images/Exercise1/Ex1t3s16.png "Discovery source - validation successful")
 
     > **Note:** When adding discovery sources:
     > -  For successfully validated hosts/clusters, you can view more details by selecting their IP address/FQDN.
@@ -281,7 +285,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 6. From **Hyper-V Manager** console, select **smarthotelweb1** and select **Connect**.
 
-    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](images/Exercise1/connect-web1.png "Connect to smarthotelweb1")
+    ![Screenshot from Hyper-V manager highlighting the 'Connect' button for the smarthotelweb1 VM.](images/Exercise1/Ex1t5s6.png "Connect to smarthotelweb1")
 
 7. Select **Connect** again when prompted and log in to the **Administrator** account using the password **demo!pass123**.
 
