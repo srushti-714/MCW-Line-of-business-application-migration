@@ -12,18 +12,23 @@ In this task, you will create the Azure Migrate project and select the assessmen
 
 1. Click on Azure portal shortcut in the desktop and log in with below Azure subscription credentials.
 
-2. Select **All services** in the portal's left navigation, then search for and select **Azure Migrate** to open the Azure Migrate Overview blade, shown below.
+    * Azure Usename/Email: <inject key="AzureAdUserEmail"></inject>
+    * Azure Password: <inject key="AzureAdUserPassword"></inject>
+    
+1. Select **All services** in the portal's left navigation, then search for and select **Azure Migrate** to open the Azure Migrate Overview blade, shown below.
 
     ![Screenshot of the Azure Migrate overview blade.](images/Exercise1/azure-migrate-overview.png "Azure Migrate Overview blade")
 
-3. Select **Assess and migrate servers**, then **Create project**.  Select your subscription and create a new resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a geography close to you to store the migration assessment data. Then select **Create**.
+1. On the overview blade of Azure Migrate, select **Assess and migrate servers**, then **Create project**.
+
+1. Select your subscription and create a new resource group named **AzureMigrateRG**. Enter **SmartHotelMigration** as the Migrate project name, and choose a geography close to you to store the migration assessment data. Then select **Create**.
 
     >**Note**: If you are running this lab in a shared subscription you will need to use a migrate project name that is unique in the subscription. Append characters to the end of migrate project name to make your project name unique. For example: **SmartHotelMigration1234**.
 
 
     ![Screenshot of the Azure Migrate 'Create project' blade, showing the Azure Migrate project name, resource group and geography.](images/Exercise1/create-project.png "Azure Migrate - Create project")
 
-6. The Azure Migrate deployment will start. Once it has completed, you should see the **Azure Migrate: Server Assessment** and **Azure Migrate: Server Migration** panels for the current migration project, as shown below.
+1. The Azure Migrate deployment will start. Once it has completed, you should see the **Azure Migrate: Server Assessment** and **Azure Migrate: Server Migration** panels for the current migration project, as shown below.
 
     ![Screenshot of the Azure Migrate 'Create project' blade, showing the Server Assessment and Server Migration panels.](images/Exercise1/servers.png "Azure Migrate - Servers view")
 
@@ -51,12 +56,7 @@ In this task, you will deploy and configure the Azure Migrate appliance in the o
 
 4.  Read through the instructions on how to download, deploy and configure the Azure Migrate appliance. Close the 'Discover machines' blade (do **not** download the .VHD file or .ZIP file, the .VHD has already been downloaded for you).
 
-5. In a separate browser tab, navigate to the Azure portal. In the global search box, enter **SmartHostSUFFIX**, then select the **SmartHostSUFFIX** virtual machine.
-
-    ![Screenshot of the Azure portal search box, searching for the SmartHotelHost virtual machine.](images/Exercise1/find-smarthotelhost.png "Search for SmartHotelHost")
-
-
-7. In Server Manager, select **Tools**, then **Hyper-V Manager** (if Server Manager does not open automatically, open it by selecting **Start**, then **Server Manager**). In Hyper-V Manager, select **SMARTHOTELHOST**. You should now see a list of the four VMs that comprise the on-premises SmartHotel application.
+7. In Server Manager, select **Tools**, then **Hyper-V Manager** (if Server Manager does not open automatically, open it by selecting **Start**, then **Server Manager**). In Hyper-V Manager, select **SMARTHOSTSUFFIX**. You should now see a list of the four VMs that comprise the on-premises SmartHotel application.
 
     ![Screenshot of Hyper-V Manager on the SmartHotelHost, showing 4 VMs: smarthotelSQL1, smarthotelweb1, smarthotelweb2 and UbuntuWAF.](images/Exercise1/hyperv-vm-list.png "Hyper-V Manager")
 
@@ -138,17 +138,19 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project.](images/Exercise1/reg1.png "Register with Azure Migrate")
 
-10. Select **Login**. This will open an Azure login prompt in a new browser tab which will ask you to enter code. you have to go to previous page and you will be able to find a generated code. Enter this code and click on Next button. (if it doesn't appear, make sure the pop-up blocker in the browser is disabled). Log in using your Azure credentials. Once you have logged in, return to the Azure Migrate Appliance tab and the appliance registration will start automatically.
+10. Select **Login**. This will open an Azure login prompt in a new browser tab which will ask you to enter code. you have to go to previous page and you will be able to find a generated code. Enter this code and click on Next button. (if it doesn't appear, make sure the pop-up blocker in the browser is disabled).
 
-    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
+11.Log in using your Azure credentials. Once you have logged in, return to the Azure Migrate Appliance tab and the appliance registration will start automatically.
+
+   ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
 
     Once the registration has completed, you can proceed to the next panel, **Manage credentials and discovery sources**.
 
-11. In **Step 1: Provide Hyper-V host credentials**, select **Add credentials**.
+12. In **Step 1: Provide Hyper-V host credentials**, select **Add credentials**.
 
     ![Screenshot of the Azure Migreate appliance configuration wizard, showing the 'Add credentials' button.](images/Exercise1/add-cred1.png "Add credentials")
 
-12. Specify **Smarthotel** as the friendly name for credentials, username **demouser**, and password **demo!pass123** for the Hyper-V host/cluster that the appliance will use to discover VMs. Select **Save**.
+13. Specify **hostlogin** as the friendly name for credentials, username **demouser**, and password **demo!pass123** for the Hyper-V host/cluster that the appliance will use to discover VMs. Select **Save**.
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add credentials' panel.](images/Exercise1/add-cred2.png "Credentials")
 
@@ -156,17 +158,17 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
      > **Note:** Multiple credentials are supported for Hyper-V VMs discovery, via the 'Add more' button.
 
-13. In **Step 2: Provide Hyper-V host/cluster details**, select **Add discovery source** to specify the Hyper-V host/cluster IP address/FQDN and the friendly name for credentials to connect to the host/cluster.
+14. In **Step 2: Provide Hyper-V host/cluster details**, select **Add discovery source** to specify the Hyper-V host/cluster IP address/FQDN and the friendly name for credentials to connect to the host/cluster.
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' button.](images/Exercise1/add-disc1.png "Add discovery source")
 
-14. Select **Add single item**, select **Smarthotel** as the friendly name, and enter **SmartHostSUFFIX** under 'IP Address / FQDN'.
+15. Select **Add single item**, select **hostlogin** as the friendly name, and enter **SmartHostSUFFIX** under 'IP Address / FQDN'.
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add discovery source' panel.](images/Exercise1/add-disc2.png "Discovery source - SmartHotelHost")
 
     > **Note:** You can either **Add single item** at a time or **Add multiple items** in one go. There is also an option to provide Hyper-V host/cluster details through **Import CSV**.
 
-15. Select **Save**. The appliance will validate the connection to the Hyper-V hosts/clusters added and show the **Validation status** in the table against each host/cluster.
+16. Select **Save**. The appliance will validate the connection to the Hyper-V hosts/clusters added and show the **Validation status** in the table against each host/cluster.
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the successful validation of the configured discovery source.](images/Exercise1/add-disc3.png "Discovery source - validation successful")
 
@@ -177,13 +179,13 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
     > -  You can't remove a specific host from a cluster. You can only remove the entire cluster.
     > -  You can add a cluster, even if there are issues with specific hosts in the cluster.
 
-16. Select **Start discovery** to kick off VM discovery from the successfully validated hosts/clusters.
+17. Select **Start discovery** to kick off VM discovery from the successfully validated hosts/clusters.
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Start discovery' button.](images/Exercise1/add-disc4.png "Start discovery")
 
-17. Wait for the Azure Migrate status to show **Discovery has been successfully initiated**. This will take several minutes. After the discovery has been successfully initiated, you can check the discovery status against each host/cluster in the table.
+18. Wait for the Azure Migrate status to show **Discovery has been successfully initiated**. This will take several minutes. After the discovery has been successfully initiated, you can check the discovery status against each host/cluster in the table.
 
-18. Return to the **Azure Migrate** blade in the Azure portal.  Select **Servers**, then select **Refresh**.  Under **Azure Migrate: Server Assessment** you should see a count of the number of servers discovered so far. If discovery is still in progress, select **Refresh** periodically until 5 discovered servers are shown. This may take several minutes.
+19. Return to the **Azure Migrate** blade in the Azure portal.  Select **Servers**, then select **Refresh**.  Under **Azure Migrate: Server Assessment** you should see a count of the number of servers discovered so far. If discovery is still in progress, select **Refresh** periodically until 5 discovered servers are shown. This may take several minutes.
 
     ![Screenshot of the Azure Migrate portal blade. Under 'Azure Migrate: Server Assessment' the value for 'discovered servers' is '5'.](images/Exercise1/discovered-servers.png "Discovered servers")
 
@@ -283,7 +285,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 7. Select **Connect** again when prompted and log in to the **Administrator** account using the password **demo!pass123**.
 
-8. Open **Internet Explorer**, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, **Run** the installer.
+8. Open **Internet Explorer**, and paste the link to the **64-bit Microsoft Monitoring Agent** for Windows, which you noted earlier. When prompted, **Run** the installer.
 
     > **Note:** You may need to disable **Internet Explorer Enhanced Security Configuration** on **Server Manager** under **Local Server** to complete the download. 
 
@@ -293,7 +295,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
     ![Screenshot of the Microsoft Monitoring Agent install wizard, showing the Log Analytics (OMS) workspace ID and key.](images/Exercise1/mma-wizard.png "MMA agent installer - workspace configuration")
 
-10. Paste the link to the Dependency Agent Windows installer into the browser address bar. **Run** the installer and select through the install wizard to complete the installation.
+10. Paste the link to the **Dependency Agent** Windows installer into the browser address bar. **Run** the installer and select through the install wizard to complete the installation.
 
     ![Screenshot showing the Internet Explorer prompt to run the installer for the Dependency Agent.](images/Exercise1/da-win-run.png "Run Dependency Agent installer")
 
@@ -303,7 +305,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dependency Agent on the **UbuntuWAF** VM. To do so, you will first connect to the UbuntuWAF remotely using an SSH session.
 
-12. Return to the RDP session with the **SmartHostSUFFIX** and open a command prompt using the desktop shortcut.  
+12. Open a command prompt using the desktop shortcut.  
 
     > **Note**: The SmartHotelHost runs Windows Server 2019 with the Windows Subsystem for Linux enabled. This allows the command prompt to be used as an SSH client. More info of supported Linux on Azure can be found here: https://Azure.com/Linux. 
 
