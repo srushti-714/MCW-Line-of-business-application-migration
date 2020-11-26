@@ -146,43 +146,41 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the Discover machines' panel from Azure Migrate, highlighting the download link for the Hyper-V replication provider software installer.](images/Exercise3/discover-3.png "Replication provider download link")
 
-4. Open the **SmartHostSUFFIX** remote desktop window, launch **Chrome** from the desktop shortcut, and paste the link into a new browser tab to download the Azure Site Recovery provider installer.
+4. Launch **Microsoft Edge** from the desktop shortcut, and paste the link into a new browser tab to download the Azure Site Recovery provider installer.
 
-5. Return to the **Discover machines** page in your browser (outside the SmartHotelHost remote desktop session). Select the blue **Download** button and download the registration key file.
+5. Return to the **Discover machines** page in your browser and select the blue **Download** button and download the registration key file.
 
     ![Screenshot of the Discover machines' panel from Azure Migrate, highlighting the download link Hyper-V registration key file.](images/Exercise3/discover-4.png "Download registration key file")
 
-6. Open the file location in Windows Explorer, and copy the file to your clipboard. Return to the **SmartHostSUFFIX** remote desktop session and paste the file to the desktop.
-
-7. Still within the **SmartHostSUFFIX** remote desktop session, open the **AzureSiteRecoveryProvider.exe** installer you downloaded a moment ago. On the **Microsoft Update** tab, select **Off** and select **Next**. Accept the default installation location and select **Install**.
+6. Open the **AzureSiteRecoveryProvider.exe** installer you downloaded a moment ago. On the **Microsoft Update** tab, select **Off** and select **Next**. Accept the default installation location and select **Install**.
 
     ![Screenshot of the ASR provider installer.](images/Exercise3/asr-provider-install.png "Azure Site Recovery Provider Setup")
 
-8. When the installation has completed select **Register**. Browse to the location of the key file you downloaded. When the key is loaded select **Next**.
+7. When the installation has completed select **Register**. Browse to the location of the key file you downloaded. When the key is loaded select **Next**.
 
     ![Screenshot of the ASR provider registration settings.](images/Exercise3/asr-registration.png "Key file registration")
 
-9.  Select **Connect directly to Azure Site Recovery without a proxy server** and select **Next**. The registration of the Hyper-V host with Azure Site Recovery will begin.
+8.  Select **Connect directly to Azure Site Recovery without a proxy server** and select **Next**. The registration of the Hyper-V host with Azure Site Recovery will begin.
 
-10. Wait for registration to complete (this may take several minutes). Then select **Finish**.
+9. Wait for registration to complete (this may take several minutes). Then select **Finish**.
 
     ![Screenshot of the ASR provider showing successful registration.](images/Exercise3/asr-registered.png "Registration complete")
 
-11. Return to the Azure Migrate browser window. **Refresh** your browser, then re-open the **Discover machines** panel by selecting **Discover** under **Azure Migrate: Server Migration** and selecting **Yes, with Hyper-V** for **Are your machines virtualized?**.
+10. Return to the Azure Migrate browser window. **Refresh** your browser, then re-open the **Discover machines** panel by selecting **Discover** under **Azure Migrate: Server Migration** and selecting **Yes, with Hyper-V** for **Are your machines virtualized?**.
 
-12. Select **Finalize registration**, which should now be enabled.
+11. Select **Finalize registration**, which should now be enabled.
 
     ![Screenshot of the Discover machines' panel from Azure Migrate, highlighting the download link Hyper-V registration key file.](images/Exercise3/discover-5.png "Finalize registration")
 
-13. Azure Migrate will now complete the registration with the Hyper-V host. **Wait** for the registration to complete. This may take several minutes.
+12. Azure Migrate will now complete the registration with the Hyper-V host. **Wait** for the registration to complete. This may take several minutes.
 
     ![Screenshot of the 'Discover machines' panel from Azure Migrate, showing the 'Finalizing registration...' message.](images/Exercise3/discover-6.png "Finalizing registration...")
 
-14. Once the registration is complete, close the **Discover machines** panel.
+13. Once the registration is complete, close the **Discover machines** panel.
 
     ![Screenshot of the 'Discover machines' panel from Azure Migrate, showing the 'Registration finalized' message.](images/Exercise3/discover-7.png "Registration finalized")
 
-16. The **Azure Migrate: Server Migration** panel should now show 5 discovered servers.
+14. The **Azure Migrate: Server Migration** panel should now show 5 discovered servers.
 
     ![Screenshot of the 'Azure Migrate - Servers' blade showing 6 discovered servers under 'Azure Migrate: Server Migration'.](images/Exercise3/discover-8.png "Discovered servers")
 
