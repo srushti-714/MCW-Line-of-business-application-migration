@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Line of business application migration",
+    "Language": "English",
+    "Files": [
+       {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/lab-overview.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/GettingStarted.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/HOL%20step-by%20step%20-%20Line-of-business%20application%20migration_06.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/HOL%20step-by%20step%20-%20Line-of-business%20application%20migration_07.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/HOL%20step-by%20step%20-%20Line-of-business%20application%20migration_08.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/lab-completed.md",
+        "Order": 6
+      }
+    ]
+  }
+]
