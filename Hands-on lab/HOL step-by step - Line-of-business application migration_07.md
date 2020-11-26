@@ -9,7 +9,11 @@ In this exercise you will migrate the application database from the on-premises 
 Prior to using the Azure Database Migration Service, the resource provider **Microsoft.DataMigration** must be registered in the target subscription.
 
 1. Open the Azure Cloud Shell by navigating to **https://shell.azure.com**. Log in using your Azure subscription credentials if prompted to do so, select a **PowerShell** session, and accept any prompts.
+
 2. If you got a prompt for creating storage account, click on **Show advanced settings** and select existing Resource Group as **AzureMigrateRG** and enter **shellstorageSUFFIX** for storage account name and Enter **filestorageSUFFIX** for File Share.
+
+    ![Azure portal screenshot showing creation of storage account.](images/Exercise2/Ex2task1s2.png "New SQL Database")
+
 
 2. Run the following command to register the **Microsoft.DataMigration** resource provider:
    
@@ -66,9 +70,9 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
     > **Note**: To select the **Standard S0** database tier, select **Configure database**, then **Looking for basic, standard, premium?**, select **Standard** and select **Apply**.
 
-    ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/new-db.png "Create SQL Database")
+    ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/Ex2task2s3.png "Create SQL Database")
 
-    ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](images/Exercise2/new-db-server.png "Create Server for SQL Database")
+    ![Screenshot from the Azure portal showing the New server blade (when creating a SQL database).](images/Exercise2/Ex2task2s3.1.png "Create Server for SQL Database")
 
 4. Select **Next: Networking >** to move to the **Networking** tab. Confirm that **No access** is selected.
 
