@@ -4,27 +4,27 @@
     "Language": "English",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/01.md",
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/GettingStarted.md",
         "Order": 1
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/02.md",
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/lab-overview.md",
         "Order": 2
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/03.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/04.md",
         "Order": 3
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/04.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/05.md",
         "Order": 4
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/05.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/06.md",
         "Order": 5
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/06.md",
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Line-of-business-application-migration/master/Hands-on%20lab/lab-completed.md",
         "Order": 6
       }
     ]
