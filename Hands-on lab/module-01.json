@@ -4,7 +4,7 @@
     "Language": "English",
     "Files": [
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/01.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/06md",
         "Order": 1
       },
       {
@@ -24,7 +24,7 @@
         "Order": 5
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/06.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/prod/Hands-on%20lab/01.md",
         "Order": 6
       }
     ]
