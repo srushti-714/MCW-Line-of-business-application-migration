@@ -147,7 +147,7 @@ In this task, you will create the Azure Migrate project and select the assessmen
 
     ![Screenshot of the Azure Migrate 'Create project' blade, showing the Server Assessment and Server Migration panels.](images/Exercise1/servers.png "Azure Migrate - Servers view")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created an Azure Migrate project, using the default built-in tools for server assessment and server migration.
 
@@ -213,7 +213,7 @@ You will now deploy the Azure Migrate appliance virtual machine.  Normally, you 
 
    ![Screenshot of Hyper-V Manager showing the start button for the Azure Migrate appliance.](images/Exercise1/start-migrate-appliance.png "Start AzureMigrateAppliance")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you deployed the Azure Migrate appliance in the on-premises Hyper-V environment.
 
@@ -259,7 +259,15 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project.](images/Exercise1/reg1.png "Register with Azure Migrate")
 
-10. Select **Login**. This will open an Azure login prompt in a new browser tab (if it doesn't appear, make sure the pop-up blocker in the browser is disabled). Log in using your Azure credentials. Once you have logged in, return to the Azure Migrate Appliance tab and the appliance registration will start automatically.
+
+10. After you select **Login**, a new window will open asking for a code.  This code is located below the **Azure Migrate project key**.  Copy and paste this code in the login field.  You will then be asked for your Azure portal credentials to complete the login process.
+
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the login code for the Azure Migrate project.](images/Exercise1/reg1a.png "Azure Migrate login code")
+
+    ![Screenshot of the Azure Migrate appliance login window, showing where to copy and paste the login code for the Azure Migrate project.](images/Exercise1/reg1b.png "Azure Migrate Microsoft login")
+
+11. Select **Login**. This will open an Azure login prompt in a new browser tab (if it doesn't appear, make sure the pop-up blocker in the browser is disabled). Log in using your Azure credentials. Once you have logged in, return to the Azure Migrate Appliance tab and the appliance registration will start automatically.
+
 
     ![Screenshot of the Azure Migrate appliance configuration wizard, showing the registration with the Azure Migrate project as completed.](images/Exercise1/reg2.png "Appliance registered")
 
@@ -267,7 +275,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
 11. In **Step 1: Provide Hyper-V host credentials**, select **Add credentials**.
 
-    ![Screenshot of the Azure Migreate appliance configuration wizard, showing the 'Add credentials' button.](images/Exercise1/add-cred1.png "Add credentials")
+    ![Screenshot of the Azure Migrate appliance configuration wizard, showing the 'Add credentials' button.](images/Exercise1/add-cred1.png)
 
 12. Specify **hostlogin** as the friendly name for credentials, username **demouser**, and password **demo!pass123** for the Hyper-V host/cluster that the appliance will use to discover VMs. Select **Save**.
 
@@ -310,7 +318,7 @@ In this task, you will configure the Azure Migrate appliance and use it to compl
 
     **Wait for the discovery process to complete before proceeding to the next Task**.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you configured the Azure Migrate appliance in the on-premises Hyper-V environment and started the migration assessment discovery process.
 
@@ -368,7 +376,7 @@ In this task, you will use Azure Migrate to create a migration assessment for th
 
 13. Take a few minutes to explore other aspects of the migration assessment.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created and configured an Azure Migrate migration assessment.
 
@@ -473,8 +481,8 @@ You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dep
     ![Screenshot showing that the Dependency Agent install on Linux was successful.](images/Exercise1/da-linux-done.png "Dependency Agent installation was successful")
 
 20. The agent installation is now complete. Next, you need to generate some traffic on the SmartHotel application so the dependency visualization has some data to work with. Browse to the public IP address of the SmartHotelHost, and spend a few minutes refreshing the page and checking guests in and out.
-
-#### Task summary 
+    
+#### Task summary <!-- omit in toc -->
 
 In this task you configured the Azure Migrate dependency visualization feature, by creating a Log Analytics workspace and deploying the Azure Monitoring Agent and Dependency Agent on both Windows and Linux on-premises machines.
 
@@ -495,11 +503,11 @@ In this task, you will explore the dependency visualization feature of Azure Mig
     ![Screenshot showing the dependencies view in Azure Migrate.](images/Exercise1/dependencies.png "Dependency map")
 
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you explored the Azure Migrate dependency visualization feature.
 
-### Exercise summary 
+#### Exercise summary <!-- omit in toc -->
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
 
@@ -528,7 +536,7 @@ Prior to using the Azure Database Migration Service, the resource provider **Mic
     > Get-AzResourceProvider -ProviderNamespace Microsoft.DataMigration | Select-Object ProviderNamespace, RegistrationState, ResourceTypes
     > ```
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you registered the **Microsoft.DataMigration** resource provider with your subscription. This enables this subscription to use the Azure Database Migration Service.
 
@@ -580,7 +588,7 @@ In this task you will create a new Azure SQL database to migrate the on-premises
 
 5. Select **Review + Create**, then select **Create** to create the database. Wait for the deployment to complete.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created an Azure SQL Database running on an Azure SQL Database Server.
 
@@ -630,7 +638,7 @@ In this task you will create an Azure Database Migration Service resource. This 
 
 > **Note**: Creating a new migration service can take around 20 minutes. You can continue to the next task without waiting for the operation to complete. You will not use the Database Migration Service until task 5.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created a new Azure Database Migration Service resource.
 
@@ -726,7 +734,7 @@ In this task you will install and use Microsoft Data Migration Assistant (DMA) t
 
     ![Screenshot of the 'Azure Migrate - Databases' blade in the Azure portal, showing 1 assessed database.](images/Exercise2/db-assessed.png "Azure Migrate - Database Assessment")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you used Data Migration Assistant to assess an on-premises database for readiness to migrate to Azure SQL, and uploaded the assessment results to your Azure Migrate project. The DMA is integrated with Azure Migrate providing a single hub for assessment and migration tools.
 
@@ -781,6 +789,12 @@ We'll start by creating the private endpoint that allows the DMS to access the d
 6. **Wait** for the deployment to complete. Open the Private Endpoint blade, and note that the FQDN for the endpoint is listed as **\<your database\>.database.windows.net**, with an internal IP address **10.1.0.5**.
 
     ![Screenshot showing the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns.png "Private Endpoint")
+
+    ![Screenshot showing step 1 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns1.png "Find DNS for Private Endpoint")
+
+    ![Screenshot showing step 2 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns2.png "Private DNS integration")
+
+    ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Private Endpoint IP address")
 
     >**Note**: Private DNS is used so that the database domain name, **\<your server\>.database.windows.net** resolves to the internal private endpoint IP address **10.1.0.5** when resolved from the DMSvnet, but resolves to the Internet-facing IP address of the database server when resolved from outside the DMSvnet. This means the same connection string (which contains the domain name) can be used in both cases.
 
@@ -846,7 +860,7 @@ We'll start by creating the private endpoint that allows the DMS to access the d
 
     ![Screenshot showing the DMS project summary.](images/Exercise2/project-summary.png "DMS project - summary")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created a Migration Project within the Azure Database Migration Service. This project contains the connection details for both the source and target databases. A private endpoint was used to avoid exposing the database on a public IP address.
 
@@ -880,7 +894,7 @@ The schema migration will be carried out using a schema migration activity withi
 
     ![Screenshot showing the SchemaMigration progress blade. The status is 'Completed'.](images/Exercise2/schema-completed.png "Schema migration completed")
 
-#### Task summary
+#### Task summary <!-- omit in toc -->
 
 In this task you used a schema migration activity in the Azure Database Migration Service to migrate the database schema from the on-premises SQL Server database to the Azure SQL database.
 
@@ -926,11 +940,11 @@ As a final step, we will remove the private endpoint that allows the DMS service
 
     ![Screenshot from the SQL server showing the SmartHotel-DB-for-DMS private endpoint being removed.](images/Exercise2/private-endpoint-remove.png "Remove private endpoint")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you used an off-line data migration activity in the Azure Database Migration Service to migrate the database data from the on-premises SQL Server database to the Azure SQL database.
 
-### Exercise summary 
+#### Exercise summary <!-- omit in toc -->
 
 In this exercise you migrated the application database from on-premises to Azure SQL Database. The Microsoft Data Migration Assistant was used for migration assessment, and the Azure Database Migration Service was used for schema migration and data migration.
 
@@ -970,7 +984,7 @@ In this task you will create a new Azure Storage Account that will be used by Az
 
 3. Select **Review + create**, then select **Create**.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you created a new Azure Storage Account that will be used by Azure Migrate: Server Migration.
 
@@ -1056,9 +1070,16 @@ You will also configure a private endpoint in this network to allow private, sec
 
 8. **Wait** for the deployment to complete. Open the Private Endpoint blade, and note that the FQDN for the endpoint is listed as **\<your database\>.database.windows.net**, with an internal IP address **192.168.0.132**.
 
-    > **Note**: Private DNS is used so that the database domain name, **\<your server\>.database.windows.net** resolves to the internal private endpoint IP address **192.168.0.132** when resolved from the SmartHotelVNet, but resolves to the Internet-facing IP address of the database server when resolved from outside the VNet. This means the same connection string (which contains the domain name) can be used in both cases.
+    ![Screenshot showing step 1 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns1.png "Private Endpoint DNS")
 
-#### Task summary 
+    ![Screenshot showing step 2 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns2.png "Private Endpoint DNS integration")
+
+    ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Find Private Endpoint IP address")
+    
+    >**Note**: Private DNS is used so that the database domain name, **\<your server\>.database.windows.net** resolves to the internal private endpoint IP address **192.168.0.132** when resolved from the SmartHotelVNet, but resolves to the Internet-facing IP address of the database server when resolved from outside the VNet. This means the same connection string (which contains the domain name) can be used in both cases.
+
+
+#### Task summary <!-- omit in toc -->
 
 In this task you created a new virtual network that will be used by your virtual machines when they are migrated to Azure. You also created a private endpoint in this network, which will be used to access the SQL database.
 
@@ -1122,7 +1143,7 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Server
 
     ![Screenshot of the 'Azure Migrate - Servers' blade showing 6 discovered servers under 'Azure Migrate: Server Migration'.](images/Exercise3/discover-8.png "Discovered servers")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you registered your Hyper-V host with the Azure Migrate Server Migration service.
 
@@ -1172,7 +1193,7 @@ In this task, you will configure and enable the replication of your on-premises 
 
     ![Screenshot of the 'Azure Migrate: Server Migration - Replicating machines' blade showing the replication status as 'Protected' for all 3 servers.](images/Exercise3/replicate-9.png "Replication status")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task you enabled replication from the Hyper-V host to Azure Migrate, and configured the replicated VM size in Azure.
 
@@ -1206,7 +1227,7 @@ In this task you will modify the settings for each replicated VM to use a static
   
     - For **UbuntuWAF** use private IP address **192.168.0.8**
 
-#### Task summary
+#### Task summary <!-- omit in toc -->
 
 In this task you modified the settings for each replicated VM to use a static private IP address that matches the on-premises IP addresses for that machine
 
@@ -1244,7 +1265,7 @@ In this task you will perform a migration of the UbuntuWAF, smarthotelweb1, and 
 
    ![Screenshot showing resources created by the test failover (VMs, disks, and network interfaces).](images/Exercise3/migrate-6.png "Migrated resources")
 
-#### Task summary
+#### Task summary <!-- omit in toc -->
 
 In this task you used Azure Migrate to create Azure VMs using the settings you have configured, and the data replicated from the Hyper-V machines. This migrated your on-premises VMs to Azure.
 
@@ -1314,7 +1335,7 @@ On the migrated VM **smarthotelweb2**, this configuration needs to be updated to
 
 4. **Save** the `web.config` file and exit your Bastion remote desktop session.
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task, you updated the **smarthotelweb2** configuration to connect to the Azure SQL Database.
 
@@ -1342,7 +1363,7 @@ In this task, you will associate a public IP address with the UbuntuWAF VM. This
 
     ![Screenshot showing the SmartHotel application.](images/Exercise3/smarthotel.png "Migrated SmartHotel application")
 
-#### Task summary 
+#### Task summary <!-- omit in toc -->
 
 In this task, you assigned a public IP address to the UbuntuWAF VM and verified that the SmartHotel application is now working in Azure.
 
