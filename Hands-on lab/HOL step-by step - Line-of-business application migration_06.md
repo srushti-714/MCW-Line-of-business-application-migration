@@ -245,7 +245,7 @@ In this task, you will use Azure Migrate to create a migration assessment for th
 
 5. Select **Next** to move to the **Select machines to assess** tab. Choose **Create New** and enter the group name **SmartHotel VMs**. Select the **smarthotelweb1**, **smarthotelweb2** and **UbuntuWAF** VMs.
 
-    ![Screenshot of the Azure Migrate 'Assess servers' page. A new server group containing servers smarthotelweb1, smarthotelweb2, and UbuntuWAF.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/SmartHotelVMsgroup.png?raw=true "Assessment VM group")
+    ![Screenshot of the Azure Migrate 'Assess servers' page. A new server group containing servers smarthotelweb1, smarthotelweb2, and UbuntuWAF.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/fix/Hands-on%20lab/images/local/SmartHotelVMsgroup.png "Assessment VM group")
 
     **Note:** There is no need to include the **smarthotelSQL1** or **AzureMigrateAppliance** VMs in the assessment, since they will not be migrated to Azure. (The SQL Server will be migrated to the SQL Database service and the Azure Migrate Appliance is only used for migration assessment.)
 
@@ -288,12 +288,10 @@ When migrating a workload to Azure, it is important to understand all workload d
 In this task, you will configure the Azure Migrate dependency visualization feature. This requires you to first create a Log Analytics workspace, and then to deploy agents on the to-be-migrated VMs.
 
 1. Return to the **Azure Migrate** blade in the Azure Portal, and select **Servers**. Under **Azure Migrate: Server Assessment** select **Groups**, then select the **SmartHotel VMs** group to see the group details.
- 
- (https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/SmartHotel%20VMs%20group.png?raw=true "Assessment VM group") 
- 
-2. Note that each VM has their **Dependencies** status as **Requires agent installation**. Select **Requires agent installation** for the **smarthotelweb1** VM.
 
-    ![Screenshot showing the SmartHotel VMs group. Each VM has dependency status 'Requires agent installation'.](images/Exercise1/requires-agent-installation.png "SmartHotel VMs server group")
+
+
+ 2. Note that each VM has their **Dependencies** status as **Requires agent installation**. Select **Requires agent installation** for the **smarthotelweb1** VM.
 
 3. On the **Dependencies** blade, select **Configure OMS workspace**.
 
