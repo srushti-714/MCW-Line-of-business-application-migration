@@ -39,4 +39,4 @@
 
     ![](images/local/image10.png "Resource groups")
    
-1. Now, click on the **Next** from lower right corner to move on **Getting Started** page.
+1. Now, click on the **Next** from lower right corner to move on next page.
