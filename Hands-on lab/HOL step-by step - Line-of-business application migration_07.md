@@ -9,9 +9,12 @@ In this exercise you will migrate the application database from the on-premises 
 Prior to using the Azure Database Migration Service, the resource provider **Microsoft.DataMigration** must be registered in the target subscription.
 
 1. Open the Azure Cloud Shell by navigating to https://shell.azure.com. Log in using your Azure subscription credentials if prompted to do so, select a PowerShell session.
-     ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/powershell.png?raw=true "selecting Powershell")
+ 
+    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/storageaccount.png?raw=true "selecting Powershell")
 
 2. If you get a prompt for creating storage account, click on **Show advanced settings** and select existing Resource Group as **AzureMigrateRG** and enter **shellstorageSUFFIX** for storage account name and Enter **filestorageSUFFIX** for File Share.
+ 
+    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/powershell.png?raw=true "selecting Powershell")
 
 2. Run the following command to register the **Microsoft.DataMigration** resource provider:
    
@@ -69,7 +72,9 @@ In this task you will create a new Azure SQL database to migrate the on-premises
     > **Note**: To select the **Standard S0** database tier, select **Configure database**, then **Looking for basic, standard, premium?**, select **Standard** and select **Apply**.
 
     ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql1.png?raw=true "selecting database tier")
+
      ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql2.png?raw=true "selecting database tier")
+
  The final screenshots will look like this:
 
 
@@ -160,15 +165,23 @@ In this task you will install and use Microsoft Data Migration Assistant (DMA) t
 5. Select **Download** to open the Data Migration Assistant download page.
 
 6. On the the Data Migration Assistant download page, scroll down and click on **Download**.
+
      ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma1.png?raw=true "Data Migration Assistant")
 
 7. Once downloaded, open the file and click on **Next** on **Welcome to the Microsoft Data Migration Assistant Setup Wizard**. 
+
     ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma2.png?raw=true "Data Migration Assistant") 
+
 8. On the **End-User License Agreement** balde, check the option **I accept the terms in the License agreement** and click on **Next**. 
+
     ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma3.png?raw=true "Data Migration Assistant") 
+
 9. On the **Privacy Statement** balde, check the option **I accept the terms in the License agreement** and click on **Install**. 
+
     ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma6.png?raw=true "Data Migration Assistant") 
+
 10. On the **Completed the Microsoft Data Migration Assistant Setup Wizard** blade, select **Finish** to finish the installation process and click on **X** to close the installation blade.
+
      ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma4.png?raw=true "Data Migration Assistant")
 
 
@@ -177,6 +190,7 @@ In this task you will install and use Microsoft Data Migration Assistant (DMA) t
   ![Screenshot showing the Dma.exe.config setting enabling upload to Azure Migrate.](images/Exercise2/dma-enable-upload.png "Dma.exe.config file")
 
 12.  Launch **Microsoft Data Migration Assistant** using the desktop icon.
+
      ![Screenshot for installing Data Migration Assistant.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dma5.png?raw=true "Data Migration Assistant")
   
 
@@ -254,7 +268,7 @@ In subsequent tasks, you will use this project to migrate both the database sche
 
 We'll start by creating the private endpoint that allows the DMS to access the database server.
 
-1. In the Azure portal, navigate to the **SmartHotelDBRG** resource group, and then to the database server.
+1. In the Azure portal, navigate to the **SmartHotelDBRG** resource group, and then to the database server **smarthoteldb{SUFFIX}**.
 
 2. From the left hand side menu, select **Private endpoint connections** under **Security**, then **+ Private endpoint**.
 
@@ -297,12 +311,12 @@ We'll start by creating the private endpoint that allows the DMS to access the d
 6. **Wait** for the deployment to complete. Navigate to the **SmartHotelDBRG** resource group, and then to the endpoint **SmartHotel-DB-for-DMS**.
 
 
- On the **SmartHotel-DB-for-DMS** private endpoint blade, from the left hand side menu select **DNS configuration** which is under **Settings**.
+  On the **SmartHotel-DB-for-DMS** private endpoint blade, from the left hand side menu select **DNS configuration** which is under **Settings**.
     ![Screenshot showing step 1 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns1.png "Find DNS for Private Endpoint")
- On the **SmartHotel-DB-for-DMS | DNS configuration**, select the **Private DNS Zone** **privatelink.database.windows.net**.
+  On the **SmartHotel-DB-for-DMS | DNS configuration**, select the **Private DNS Zone** **privatelink.database.windows.net**.
 
     ![Screenshot showing step 2 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns2.png "Private DNS integration")
- On the **privatelink.database.windows.net** overview blade, note that the **Record set** with name **smarthoteldb{SUFFIX}** and an internal IP address **10.1.0.5** is listed.
+  On the **privatelink.database.windows.net** overview blade, note that the **Record set** with name **smarthoteldb{SUFFIX}** and an internal IP address **10.1.0.5** is listed.
 
     ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Private Endpoint IP address")
 
