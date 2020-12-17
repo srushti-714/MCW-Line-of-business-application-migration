@@ -10,11 +10,11 @@ Prior to using the Azure Database Migration Service, the resource provider **Mic
 
 1. Open the Azure Cloud Shell by navigating to https://shell.azure.com. Log in using your Azure subscription credentials if prompted to do so, select a PowerShell session.
  
-    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/storageaccount.png?raw=true "selecting Powershell")
+    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/powershell.png?raw=true "selecting Powershell")
 
 2. If you get a prompt for creating storage account, click on **Show advanced settings** and select existing Resource Group as **AzureMigrateRG** and enter **shellstorageSUFFIX** for storage account name and Enter **filestorageSUFFIX** for File Share.
  
-    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/powershell.png?raw=true "selecting Powershell")
+    ![Screenshot for selecting Powershell.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/storageaccount.png?raw=true "selecting Powershell")
 
 2. Run the following command to register the **Microsoft.DataMigration** resource provider:
    
@@ -76,7 +76,6 @@ In this task you will create a new Azure SQL database to migrate the on-premises
      ![Screenshot for selecting database tier.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/sql2.png?raw=true "selecting database tier")
 
  The final screenshots will look like this:
-
 
     ![Screenshot from the Azure portal showing the Create SQL Database blade.](images/Exercise2/new-db.png "Create SQL Database")
 
@@ -313,12 +312,13 @@ We'll start by creating the private endpoint that allows the DMS to access the d
 
   On the **SmartHotel-DB-for-DMS** private endpoint blade, from the left hand side menu select **DNS configuration** which is under **Settings**.
     ![Screenshot showing step 1 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns1.png "Find DNS for Private Endpoint")
+
   On the **SmartHotel-DB-for-DMS | DNS configuration**, select the **Private DNS Zone** **privatelink.database.windows.net**.
 
-    ![Screenshot showing step 2 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns2.png "Private DNS integration")
-  On the **privatelink.database.windows.net** overview blade, note that the **Record set** with name **smarthoteldb{SUFFIX}** and an internal IP address **10.1.0.5** is listed.
+   ![Screenshot showing step 2 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns2.png "Private DNS integration")
 
-    ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Private Endpoint IP address")
+
+   ![Screenshot showing step 3 to find the DNS entry for the SQL database server private endpoint](images/Exercise2/private-endpoint-dns3.png "Private Endpoint IP address")
 
     >**Note**: Private DNS is used so that the database domain name, **\<your server\>.database.windows.net** resolves to the internal private endpoint IP address **10.1.0.5** when resolved from the DMSvnet, but resolves to the Internet-facing IP address of the database server when resolved from outside the DMSvnet. This means the same connection string (which contains the domain name) can be used in both cases.
 
