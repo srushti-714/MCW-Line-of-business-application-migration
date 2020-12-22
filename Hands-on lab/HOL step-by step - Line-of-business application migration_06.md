@@ -371,7 +371,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 21. On the **Completing Dependency Agent Setup** blade, select **Finish** to finish the installation process.
 
-    ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent1.png?raw=true "Dependency Agent installation") 
+    ![Screenshot for installing Dependency Agent.](https://github.com/CloudLabs-MCW/MCW-Line-of-business-application-migration/blob/fix/Hands-on%20lab/images/local/dependencyagent2.png?raw=true "Dependency Agent installation") 
  
 
     > **Note:** You do not need to configure the workspace ID and key when installing the Dependency Agent, since it uses the same settings as the Microsoft Monitoring Agent, which must be installed beforehand.
